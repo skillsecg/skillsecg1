@@ -1,4 +1,4 @@
-class OmniauthCallbacksControllerController < ApplicationController
+class OmniauthCallbacksControllerController < Devise::OmniauthCallbacksController
 	def linkedin
 	    auth = env["omniauth.auth"]
 	    @user = User.connect_to_linkedin(request.env["omniauth.auth"],current_user)
